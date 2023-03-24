@@ -9,8 +9,8 @@
     <data>
 
         <variable
-            name="input"
-            type="com.example.livedata_view_model.MainActivity" >
+            name="inputs"
+            type="com.example.livedata_view_model.ViewModeldemo" >
         </variable>
         <variable
             name="hint"
@@ -43,22 +43,24 @@
         app:layout_constraintEnd_toEndOf="parent"
 
         >
-<!--        <EditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:inputType="number"-->
-<!--            android:id="@+id/input"-->
-<!--            android:hint="@{hint}"-->
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:id="@+id/input"
+            android:hint="@{hint}"
 
-<!--            >-->
 
-<!--        </EditText>-->
+            >
+
+        </com.google.android.material.textfield.TextInputEditText>
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
             android:id="@+id/tvCount"
             app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="center"
             app:layout_constraintStart_toStartOf="parent"
             android:text="@{String.valueOf(myViewModel.totalCount)}"
             app:layout_constraintEnd_toEndOf="parent"

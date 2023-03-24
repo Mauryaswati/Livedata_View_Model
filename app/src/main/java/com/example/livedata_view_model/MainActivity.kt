@@ -12,11 +12,14 @@ class MainActivity : AppCompatActivity() {
     lateinit var viewModel: ViewModeldemo
     lateinit var factory: ViewModelFactory
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        super.onCreate(savedInstanceState)// RUN AK
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)//BINA VIEW HA HI DATA SET AKR EAHA HII
+
+
         binding.hint = "Enter the value"
         binding.buttonName = "Add"
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
-        factory = ViewModelFactory(0)
+        factory = ViewModelFactory(125)
+
         viewModel = ViewModelProvider(this, factory)[ViewModeldemo::class.java]
        // binding.tvCount.text = viewModel.totalCount.toString()
         binding.lifecycleOwner = this

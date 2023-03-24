@@ -5,9 +5,9 @@ import androidx.lifecycle.ViewModelProvider
 
 class ViewModelFactory(private var input:Int): ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(ViewModelFactory::class.java)){
-            return ViewModelFactory(input) as T
+        if (modelClass.isAssignableFrom(ViewModeldemo::class.java)){
+            return ViewModeldemo(input) as T
         }
-        throw IllegalArgumentException("Unknown viewmodel class")
+        throw IllegalArgumentException("Unknown viewmodel class") // ye code chal raha hi
     }
 }
