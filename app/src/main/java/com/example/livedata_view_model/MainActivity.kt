@@ -15,10 +15,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)// RUN AK
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)//BINA VIEW HA HI DATA SET AKR EAHA HII
 
-
         binding.hint = "Enter the value"
         binding.buttonName = "Add"
-        factory = ViewModelFactory(125)
+        factory = ViewModelFactory(0)
 
         viewModel = ViewModelProvider(this, factory)[ViewModeldemo::class.java]
        // binding.tvCount.text = viewModel.totalCount.toString()
