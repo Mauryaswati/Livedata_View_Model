@@ -4,6 +4,7 @@ package com.example.livedata_view_model
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.livedata_view_model.databinding.ActivityMainBinding
 
@@ -14,15 +15,23 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)// RUN AK
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)//BINA VIEW HA HI DATA SET AKR EAHA HII
-
         binding.hint = "Enter the value"
         binding.buttonName = "Add"
-        factory = ViewModelFactory(0)
+        binding.lifecycleOwner = this
+
+
+        factory = ViewModelFactory(125)
 
         viewModel = ViewModelProvider(this, factory)[ViewModeldemo::class.java]
-       // binding.tvCount.text = viewModel.totalCount.toString()
-        binding.lifecycleOwner = this
+
         binding.myViewModel=viewModel
+
+//        viewModel.totalCount.observe(this, Observer {
+//        })
+
+        binding.btnAdd.setOnClickListener {
+            viewModel.setinput(binding.input.editText?.text.toString().toInt())
+        }
 
     }
 }

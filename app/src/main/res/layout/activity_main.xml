@@ -34,6 +34,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/input"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="20dp"
@@ -47,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:id="@+id/input"
+
             android:hint="@{hint}"
 
 
@@ -72,7 +73,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
             android:layout_gravity="center"
-            android:onClick="@{()->myViewModel.updateCount()}"
+          android:id="@+id/btn_add"
             app:cornerRadius="20dp"
             android:text="@{buttonName}"
             app:layout_constraintTop_toTopOf="parent"

@@ -11,7 +11,11 @@ class ViewModeldemo(private var inputValue: Int): ViewModel() {
         _count.value = inputValue
     }
     fun updateCount(){
-        _count.value = _count.value?.plus(1)
+//        var b = a.toInt()
+//        _count.value = _count.value?.plus(b)
+    }
+    fun setinput (a:Int){
+        _count.value= _count.value?.plus(a)
     }
 
 }
